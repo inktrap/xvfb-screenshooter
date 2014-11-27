@@ -18,14 +18,17 @@ SCREEN=0
 OUTPUT_DIR="./output"
 SC=0
 
-AUTH_ERR_LOG="./error.log"
-VIDEO_OUTFILE="${CMD}.ogv"
-IMAGE_OUTFILE="${CMD}.png"
-TMP="/tmp/${RANDOM}"
-
 # please change this :)
 # todo: $1
 CMD="./bin/helloworld.py"
+
+CMD_BIN=$(basename "$CMD" )
+
+AUTH_ERR_LOG="./error.log"
+VIDEO_OUTFILE="${CMD_BIN}.ogv"
+IMAGE_OUTFILE="${CMD_BIN}.png"
+TMP="/tmp/${RANDOM}"
+
 
 if [ ! -d $OUTPUT_DIR ]; then
     mkdir $OUTPUT_DIR
