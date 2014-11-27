@@ -27,6 +27,10 @@ TMP="/tmp/${RANDOM}"
 # todo: $1
 CMD="./bin/helloworld.py"
 
+if [ ! -d $OUTPUT_DIR ]; then
+    mkdir $OUTPUT_DIR
+fi
+
 (rm "$AUTH_ERR_LOG" || true) 2>/dev/null
 (rm "$OUTPUT_DIR/$VIDEO_OUTFILE" || true) 2>/dev/null
 (rm "$OUTPUT_DIR/$IMAGE_OUTFILE" || true) 2>/dev/null
